@@ -1,5 +1,5 @@
 import ProductCard from "@/components/ProductCard";
-import { conn } from "@/ruta/a/tu/archivo/de/conexion";
+import { conn } from "@/libs/mysql";
 
 async function loadProducts() {
   try {
