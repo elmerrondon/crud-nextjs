@@ -1,15 +1,14 @@
 import ProductCard from "@/components/ProductCard";
+import { conn } from "@/ruta/a/tu/archivo/de/conexion";
 
 async function loadProducts() {
-  const baseURL = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
-
-  const res = await fetch(`${baseURL}/api/products`, {
-    cache: "no-store",
-  });
-  const data = await res.json();
-  return data;
+  try {
+    const products = await conn.query("SELECT * FROM productos");
+    return products;
+  } catch (error) {
+    console.error("Error al cargar los productos de la BD:", error);
+    return [];
+  }
 }
 
 async function ProductsPage() {
