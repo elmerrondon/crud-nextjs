@@ -4,6 +4,14 @@ Este es un proyecto **Full-Stack CRUD (Crear, Leer, Actualizar, Eliminar)** para
 
 ---
 
+## 🌐 ¡Prueba el proyecto en vivo!
+
+👉 **<a href="https://crud-nextjs-rose.vercel.app/" target="_blank">ACCEDER AL DEMO ONLINE AQUÍ</a>** 👈
+
+> **⚠️ Nota importante sobre el Demo en Vercel:** Este proyecto utiliza el módulo `fs` (File System) de Node.js para guardar las imágenes localmente. Debido a que Vercel utiliza un entorno *Serverless* de solo lectura, la función de subir nuevas imágenes o modificar las existentes está limitada en el entorno de producción, pero **funciona perfectamente al ejecutar el proyecto en modo local**.
+
+---
+
 ## 💻 Stack Tecnológico
 
 | Categoría | Tecnología | Propósito |
@@ -28,25 +36,15 @@ Este es un proyecto **Full-Stack CRUD (Crear, Leer, Actualizar, Eliminar)** para
 ## 🖼️ Vistas del Proyecto
 
 ### 🏠 Listado de Productos
-
 Página principal que muestra todos los productos.
-
 ![Seccion de home](./img/home.png)
 
----
-
 ### ➕ Agregar Nuevo Producto
-
 Formulario para la creación de un nuevo registro y subida de la imagen.
-
 ![Seccion de productos](./img/add.png)
 
----
-
 ### 📝 Detalle y Edición
-
 Página que muestra el detalle completo y permite editar o eliminar el producto.
-
 ![Seccion de Proveedores](./img/edit.png)
 
 ---
@@ -56,33 +54,42 @@ Página que muestra el detalle completo y permite editar o eliminar el producto.
 Sigue estos pasos para configurar y ejecutar la aplicación en tu entorno local.
 
 ### 1. Requisitos
-
 Asegúrate de tener instalado:
 * **Node.js** (v18+)
 * **MySQL Server** en ejecución.
 
-### 2. Configuración de la Base de Datos
+### 2. Configuración de la Base de Datos y Variables de Entorno
 
-1.  **Crea la base de datos** y la tabla. El script SQL necesario se encuentra en la ruta:
-    ```
-    ./database/db.sql
-    ```
+1. **Crea la base de datos** y la tabla. El script SQL necesario se encuentra en la ruta:
+   ```bash
+   ./database/db.sql
+   ```
+2. **Crea un archivo `.env`** en la raíz del proyecto y agrega tus credenciales de MySQL:
+   ```env
+   MYSQL_HOST="localhost"
+   MYSQL_USER="root"
+   MYSQL_PASSWORD="tu_password"
+   MYSQL_PORT=3306
+   MYSQL_DATABASE="nombre_de_tu_db"
+   ```
 
 ### 3. Instalación y Ejecución
 
-1.  **Clona el Repositorio:**
-    ```bash
-    git clone https://github.com/elmerrondon/crud-nextjs.git
-    cd crud-nextjs
-    ```
-2.  **Instala las Dependencias:**
-    ```bash
-    npm install
-    ```
-3.  **Inicia la Aplicación en Modo Desarrollo:**
-    ```bash
-    npm run dev
-    ```
+1. **Clona el Repositorio:**
+   ```bash
+   git clone [https://github.com/elmerrondon/crud-nextjs.git](https://github.com/elmerrondon/crud-nextjs.git)
+   cd crud-nextjs
+   ```
+
+2. **Instala las Dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Inicia la Aplicación en Modo Desarrollo:**
+   ```bash
+   npm run dev
+   ```
 
 El proyecto se abrirá en tu navegador en `http://localhost:3000`.
 
@@ -94,3 +101,4 @@ Para generar la versión optimizada de producción (Server-Side Rendering y API 
 
 ```bash
 npm run build
+```
