@@ -7,10 +7,5 @@ export const conn = mysql({
     password: process.env.MYSQL_PASSWORD,
     port: process.env.MYSQL_PORT,
     database: process.env.MYSQL_DATABASE,
-
-    // El ajuste clave para que Vercel se conecte a Aiven sin dar error 500
-    ssl: {
-      rejectUnauthorized: false,
-    },
   },
 });
