@@ -3,10 +3,10 @@ import { conn } from "@/libs/mysql";
 
 async function loadProducts() {
   try {
-    const products = await conn.query("SELECT * FROM productos");
+    const products = await conn.query("SELECT * FROM product");
     return products;
   } catch (error) {
-    console.error("Error al cargar los productos de la BD:", error);
+    console.error(error);
     return [];
   }
 }
