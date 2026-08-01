@@ -1,11 +1,16 @@
 import mysql from "serverless-mysql";
 
 export const conn = mysql({
-    config: {
-        host: "localhost",
-        user: "root",
-        password: "",
-        port: 3306,
-        database: "crud_productos_nextjs"
-    }
+  config: {
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    port: process.env.MYSQL_PORT,
+    database: process.env.MYSQL_DATABASE,
+
+    // El ajuste clave para que Vercel se conecte a Aiven sin dar error 500
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
 });
